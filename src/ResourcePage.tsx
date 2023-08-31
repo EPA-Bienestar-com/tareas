@@ -16,7 +16,7 @@ export function ResourcePage(): JSX.Element | null {
       <h2>
         {getDisplayString(resource)}{' '}
         <sup>
-          <Anchor href={`https://app.medplum.com/${resourceType}/${id}`} target="_blank">
+          <Anchor href={`https://app.medplum.epa-bienestar.com/${resourceType}/${id}`} target="_blank">
             <IconExternalLink size={16} />
           </Anchor>
         </sup>
