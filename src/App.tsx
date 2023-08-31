@@ -26,7 +26,7 @@ export function App(): JSX.Element | null {
                 <Anchor to="/" component={Link}>
                   <Group spacing={'xs'}>
                     <Logo size={17} />
-                    <Text>Task Demo</Text>
+                    <Text>Tareas</Text>
                   </Group>
                 </Anchor>
               </Group>
@@ -38,7 +38,7 @@ export function App(): JSX.Element | null {
                   window.location.reload();
                 }}
               >
-                Sign out
+                Salir
               </Button>
             </Group>
           </Header>
