@@ -24,11 +24,11 @@ export function TaskList(props: TaskListProps): JSX.Element {
       <Table verticalSpacing={2} fontSize="xs" width="100%">
         <thead>
           <tr>
-            <th>Code</th>
-            {props.withOwner && <th>Owner</th>}
-            {props.withDueDate && <th>Due</th>}
-            <th>Status</th>
-            {props.withLastUpdated && <th>Last Updated</th>}
+            <th>Código</th>
+            {props.withOwner && <th>Responsable</th>}
+            {props.withDueDate && <th>Pendiente</th>}
+            <th>Estado</th>
+            {props.withLastUpdated && <th>Ultima actualización</th>}
             {props.withActions && <th />}
           </tr>
         </thead>
@@ -51,7 +51,7 @@ export function TaskList(props: TaskListProps): JSX.Element {
             <tr>
               <td colSpan={100} align="center">
                 <Text size="xs" color="gray" fs="italic">
-                  No tasks found.
+                  No se encontraron tareas!
                 </Text>
               </td>
             </tr>
