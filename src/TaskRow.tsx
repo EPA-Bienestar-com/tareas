@@ -33,8 +33,8 @@ export function TaskRow(props: TaskRowProps): JSX.Element {
       notifications.show({
         color: 'blue',
         icon: <IconCircleCheck />,
-        title: 'Success',
-        message: 'Task assigned to ' + getDisplayString(profile),
+        title: 'Correcto',
+        message: 'Tarea asignada a ' + getDisplayString(profile),
       });
       props.onChange();
     },
@@ -47,10 +47,10 @@ export function TaskRow(props: TaskRowProps): JSX.Element {
       e.preventDefault();
       await testAndUpdateTask(medplum, task, 'completed');
       notifications.show({
-        color: 'teal',
+        color: 'yellow',
         icon: <IconCircleCheck />,
-        title: 'Success',
-        message: 'Task marked as completed',
+        title: 'Correcto',
+        message: 'Tarea marcada como completada',
       });
       props.onChange();
     },
@@ -61,7 +61,7 @@ export function TaskRow(props: TaskRowProps): JSX.Element {
     async (e: React.MouseEvent): Promise<void> => {
       e.stopPropagation();
       e.preventDefault();
-      window.open(`https://app.medplum.com/Task/${task.id}`, '_blank', 'noopener,noreferrer');
+      window.open(`https://app.medplum.epa-bienestar.com/Task/${task.id}`, '_blank', 'noopener,noreferrer');
     },
     [task]
   );
@@ -74,8 +74,8 @@ export function TaskRow(props: TaskRowProps): JSX.Element {
       notifications.show({
         color: 'red',
         icon: <IconCircleCheck />,
-        title: 'Success',
-        message: 'Task marked as completed',
+        title: 'Correcto',
+        message: 'Tarea marcada como completada',
       });
       props.onChange();
     },
@@ -85,19 +85,19 @@ export function TaskRow(props: TaskRowProps): JSX.Element {
   const buttons = [
     {
       icon: IconUser,
-      label: 'Assign to me',
+      label: 'Asigname a mi',
       color: 'blue',
       onClick: assignToMe,
     },
     {
       icon: IconUserSearch,
-      label: 'Assign to...',
+      label: 'Asignar a ...',
       color: 'purple',
       onClick: () => console.log('TODO'),
     },
     {
       icon: IconCircleCheck,
-      label: 'Mark as completed',
+      label: 'Marcado como completado',
       color: 'green',
       onClick: markAsCompleted,
     },
