@@ -55,7 +55,7 @@ export function HomePage(): JSX.Element {
     <>
       <Paper mb="xl">
         <Button variant="outline" onClick={() => setCreateOpened(true)}>
-          Create task...
+          Crear tarea...
         </Button>
       </Paper>
       <SimpleGrid cols={3}>
@@ -71,7 +71,7 @@ export function HomePage(): JSX.Element {
         </div>
         <div>
           <TaskList
-            title="Active"
+            title="Activo"
             tasks={tasks}
             onChange={loadTasks}
             filter={(t) => ['accepted', 'ready', 'received'].includes(t.status as string)}
@@ -82,7 +82,7 @@ export function HomePage(): JSX.Element {
         </div>
         <div>
           <TaskList
-            title="Recent"
+            title="Reciente"
             tasks={tasks}
             onChange={loadTasks}
             filter={(t) => ['cancelled', 'completed'].includes(t.status as string)}
@@ -123,7 +123,7 @@ export function HomePage(): JSX.Element {
                 setCreateOpened(false);
               })
               .catch(() => {
-                alert('Error creating task');
+                alert('Error creando tarea');
               })
               .finally(() => {
                 setSubmitting(false);
@@ -134,12 +134,12 @@ export function HomePage(): JSX.Element {
             <TextInput name="code" label="Code" required withAsterisk />
             <TextInput name="location" label="Location" />
             <NativeSelect name="priority" label="Priority" data={['routine', 'urgent', 'asap', 'stat']} />
-            <FormSection title="Due Date">
+            <FormSection title="Fecha de vencimiento">
               <DateTimeInput name="dueDate" />
             </FormSection>
-            <TextInput name="description" label="Description" />
+            <TextInput name="description" label="Descripción" />
             <Group grow align="right" mt="xl">
-              {submitting ? <Button disabled>Submitting...</Button> : <Button type="submit">Create Task</Button>}
+              {submitting ? <Button disabled>Enviando...</Button> : <Button type="submit">Crear Tarea</Button>}
             </Group>
           </Stack>
         </Form>
